@@ -1,33 +1,34 @@
 ### Create User
 
-POST http://localhost:3001/user/
+POST http://localhost:3000/tasks
 Content-Type: application/json
 
 {
-  "nome": "primeira tarefa",
-  "data_de_execucao": "21/06/22",
+  "nome": "segunda tarefa",
+  "data_de_execucao": "2022-06-22",
   "situacao": "pendente",
-  "prioridade": "alta",
-  "data_de_conclusao": "23/06/22"
+  "prioridade": "baixa",
+  "data_de_conclusao": "2022-06-30"
 }
 
 ### FindAll
 
-GET http://localhost:3001/users
+GET http://localhost:3000/tasks
 
 ### FindOne
 
-GET http://localhost:3001/users/8
+GET http://localhost:3000/tasks/62b375a825762051d7758ca6
 
 ### Update
 
-PUT http://localhost:3001/users/8
+PATCH http://localhost:3000/tasks/62b375a825762051d7758ca6
 Content-Type: application/json
 
 {
-  "nome": "user name2"
+  "situacao": "finalizado",
+  "prioridade": "media"
 }
 
 ### Delete
 
-DELETE http://localhost:3001/users/5
+DELETE http://localhost:3000/tasks/62b373af1c21666ebb1a57c9

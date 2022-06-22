@@ -28,7 +28,7 @@ export class TasksService {
         _id: id,
       },
       {
-        updateTaskDto,
+        $set: updateTaskDto,
       },
       {
         new: true,
