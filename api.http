@@ -1,0 +1,33 @@
+### Create User
+
+POST http://localhost:3001/user/
+Content-Type: application/json
+
+{
+  "nome": "primeira tarefa",
+  "data_de_execucao": "21/06/22",
+  "situacao": "pendente",
+  "prioridade": "alta",
+  "data_de_conclusao": "23/06/22"
+}
+
+### FindAll
+
+GET http://localhost:3001/users
+
+### FindOne
+
+GET http://localhost:3001/users/8
+
+### Update
+
+PUT http://localhost:3001/users/8
+Content-Type: application/json
+
+{
+  "nome": "user name2"
+}
+
+### Delete
+
+DELETE http://localhost:3001/users/5
