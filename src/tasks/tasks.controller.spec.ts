@@ -31,15 +31,14 @@ describe('TasksController', () => {
   });
 
   it('should create a task', () => {
-    expect(
-      controller.create({
-        nome: 'primeira tarefa',
-        data_de_execucao: new Date('2022-06-22'),
-        situacao: 'pendente',
-        prioridade: 'alta',
-        data_de_conclusao: new Date('2022-06-30'),
-      }),
-    ).toEqual({
+    const dto = {
+      nome: 'primeira tarefa',
+      data_de_execucao: new Date('2022-06-22'),
+      situacao: 'pendente',
+      prioridade: 'alta',
+      data_de_conclusao: new Date('2022-06-30'),
+    };
+    expect(controller.create(dto)).toEqual({
       nome: 'primeira tarefa',
       data_de_execucao: new Date('2022-06-22'),
       situacao: 'pendente',
@@ -47,5 +46,6 @@ describe('TasksController', () => {
       data_de_conclusao: new Date('2022-06-30'),
       _id: expect.any(Number),
     });
+    expect(mockTasksService.create).toHaveBeenCalledWith(dto);
   });
 });
