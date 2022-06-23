@@ -104,6 +104,8 @@ A API consta com 2 rotas:
 
 ## Testes
 
+Foram implementados testes para a criação e atualização das atividades. Ainda serão desenvolvidos testes para a remoção e a listagem de todas as atividades. 
+
 ### Cobertura
 ![Captura de tela de 2022-06-23 12-01-24](https://user-images.githubusercontent.com/82417443/175333681-430619ba-625f-40f5-806c-723f65f741ce.png)
 
