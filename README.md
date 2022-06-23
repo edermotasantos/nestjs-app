@@ -1,74 +1,133 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+# Nest.js App
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+<div> 
+  <a href="https://www.linkedin.com/in/eder-santos-dev/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> 
+  <a href = "mailto:eder.mota@outlook.com"><img src="https://img.shields.io/badge/Microsoft_Outlook-0078D4?style=for-the-badge&logo=microsoft-outlook&logoColor=white" target="_blank"></a> 
+</div>
 
-## Description
+---
+## Contexto
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Esse projeto foi desenvolvido para uma vaga de Back End na empresa Beon Tecnologia.
 
-## Installation
+A proposta era desenvolver uma aplicação Back End para enviar atividades agendadas para computação em Nuvem. Essa aplicação deve ter a possibilidade de utilizar criação, leitura, atualização, e remoção de uma ou mais atividades. 
 
-```bash
-$ npm install
+Foi proposto que o desafio técnico fosse disponibilizado no Github e fosse trabalhado com boas práticas, tendo como enfâse especial os seguintes itens:
+- Separação de responsabilidades
+- Clareza e leitura do código 
+- Organização da arquitetura do projeto
+- Detalhes de workflow do projeto
+
+Os Dados deve ser recebido em formato `JSON` da seguinte forma:
+
+```json
+{
+    "nome": "segunda tarefa",
+    "data_de_execucao": "2022-06-22",
+    "situacao": "pendente",
+    "prioridade": "baixa",
+    "data_de_conclusao": "2022-06-30"
+}
 ```
 
-## Running the app
+E será armazenado no banco de dados no formato `JSON`, dessa maneira:
 
-```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+```json
+{
+  "_id": "62b3c85555a1cb218e5bce6c",
+    "nome": "segunda tarefa",
+    "data_de_execucao": "2022-06-22T00:00:00.000Z",
+    "situacao": "pendente",
+    "prioridade": "baixa",
+    "data_de_conclusao": "2022-06-30T00:00:00.000Z",
+    "__v": 0
+}
 ```
 
-## Test
+Os dados podem ser armazenados e manipulados através dos Métodos:
+- Create
+- Read
+- Update (PATCH)
+- Delete
 
-```bash
-# unit tests
-$ npm run test
+Foi proposto o uso de Node.js, AWS, Lambda, Redis, além do uso do Framework Serverless. E para pontuação extra foi solicitado o uso do Typescript e Docker para gerenciar os recursos. Mas devido a dificuldades de acesso e o prazo, foi decidido a não utilização de AWS, Lambda, Redis como o Serverless. Como alternativa foi utilizado o Nest.js e uma tentativa de utilizar o MongoDB Atlas, que foi logo descartada também por apresentar erro ao tentar acessar. Com o uso do Nest.js, consequentemente foi utilizado Typescript e o desenvolvimento da aplicação correu sem muitos problemas, exceto após o deploy feito no Heroku.  
 
-# e2e tests
-$ npm run test:e2e
 
-# test coverage
-$ npm run test:cov
-```
+### Tecnologias
 
-## Support
+* `Nest.js`
+* `Node.js`
+* `Typescript`
+* `Jest`
+* `Mongoose`
+* `MongoDB`
+* `Heroku`
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+## Desenvolvimento
 
-## Stay in touch
+O desenvolvimento da aplicação foi feito no `VSCODE`, e o projeto teve que ser reiniciado após constatar que não seria possível trabalhar com `AWS` dentro do prazo estabelecido. Após isso foi implementado uma nova aplicação utilizando `Nest.js` de forma simples. Foi utilizado o `POSTMAN` para testar se a a aplicação estava populando corretamente e o `MongoDB Compass` para visualizar o banco de dados. Logo após foi feito o Deploy no Heroku e mais tarde alguns testes utilizando Jest.
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+## Como instalar
 
-## License
+Pre-requisitos para rodar o projeto: 
+- `mongoDB`
+- `Node.js`
 
-Nest is [MIT licensed](LICENSE).
-# nestjs-app
+Copie o ssh do projeto `git@github.com:edermotasantos/nestjs-app.git`
+
+* Abra um terminal no seu computador e utilize os comandos a baixo na ordem que são apresentados:
+
+  * `git clone git@github.com:edermotasantos/nestjs-app.git`
+  * `cd nestjs-app`
+  * `yarn install`
+  * `yarn run start`
+
+* Para testar, basta ditarar o comando:
+* `yarn run test`
+  
+Localmente foi utilizado um arquivo `.env` (não enviado para o github) para as configurações locais, mas as funções estão configuradas para que também possa ser utilizadas sem esse arquivo.
+
+---
+
+## Modo de utilização
+
+A API consta com 2 rotas: 
+* `/tasks` [`POST`] Insere uma atividade
+* `/tasks` [`GET`]  Pegar a lista de atividades
+* `/tasks/:id` [`GET`] Pega uma atividade
+* `/tasks/:id` [`PATCH`] Atualiza uma atividade
+* `/tasks/:id` [`DELETE`] Deleta uma atividade
+*  
+---
+
+### Deploy Heroku
+
+Apesar do deploy ter sido feito sem nenhum contratempo, não consegui acesso ao App através do link abaixo. No terminal apresentou um erro no Port, mas que aparentemente estava solucionado. Como não consegui resolver, segui para outros terminar outros requisitos. 
+
+Para acesso ao App: https://nestjs-app-heroku.herokuapp.com/
+Heroku git url: https://git.heroku.com/nestjs-app-heroku.git
+
+
+
+### Banco de dados
+
+Foi utilizado o `MongoDB` pela fácil inserção e extração de dados.
+
+---
+
+## Próximos passos
+
+* Implementação de mais Testes
+* Implementação de `Token` de acesso e `login`
+
+---
+
+
+# Entre em contato:
+
+<div> 
+  <a href="https://www.linkedin.com/in/eder-santos-dev/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> 
+  <a href = "mailto:eder.mota@outlook.com"><img src="https://img.shields.io/badge/Microsoft_Outlook-0078D4?style=for-the-badge&logo=microsoft-outlook&logoColor=white" target="_blank"></a> 
+</div>
