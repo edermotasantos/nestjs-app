@@ -102,6 +102,13 @@ A API consta com 2 rotas:
 *  
 ---
 
+### Testes
+
+## Cobertura
+![Captura de tela de 2022-06-23 12-01-24](https://user-images.githubusercontent.com/82417443/175331169-fe4b001d-dfd4-42c0-83ba-a0e1919d4b27.png)
+
+
+
 ### Deploy Heroku
 
 Apesar do deploy ter sido feito sem nenhum contratempo, não consegui acesso ao App através do link abaixo. No terminal apresentou um erro no Port, mas que aparentemente estava solucionado. Como não consegui resolver, segui para outros terminar outros requisitos. 
