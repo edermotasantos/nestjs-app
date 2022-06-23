@@ -102,9 +102,9 @@ A API consta com 2 rotas:
 *  
 ---
 
-### Testes
+## Testes
 
-## Cobertura
+### Cobertura
 ![Captura de tela de 2022-06-23 12-01-24](https://user-images.githubusercontent.com/82417443/175333681-430619ba-625f-40f5-806c-723f65f741ce.png)
 
 ![Captura de tela de 2022-06-23 12-12-26](https://user-images.githubusercontent.com/82417443/175334032-bfcdc564-4303-4151-82ae-3885a7c3a1f8.png)
